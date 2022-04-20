@@ -14,16 +14,14 @@ export const SBList = styled.ul`
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  transition: 100ms;
-  height: ${({isOpen}) => (isOpen ? '0px' : '300px')};
-
-  
+  transition: 300ms;
+  height: ${({isOpen}) => (isOpen ? '300px' : '0px')};
 `;
 export const SBLItem = styled.li`
 border-radius: 50%;
   height: 24px;
   width: 24px;
   list-style: none;
-
-  cursor: pointer;
 `;
+export const PlusNote = styled.div `
+`

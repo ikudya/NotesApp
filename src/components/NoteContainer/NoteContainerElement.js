@@ -5,7 +5,7 @@ export const NotesContainer = styled.div `
    height: 100%;
 `;
 export const H2 = styled.h2 `
-
+margin-bottom: 20px;
 `;
 export const NoteContainerNotes = styled.div`
   height: 90%;

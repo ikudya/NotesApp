@@ -1,22 +1,20 @@
 import React, {useState} from "react";
-import {SideBarWrapper, IMG, SBList, SBLItem} from "./SideBarElement";
+import {SideBarWrapper, IMG, SBList, SBLItem, PlusNote} from "./SideBarElement";
 import plusIcon from '../../img/add-button.png'
 
 const SideBar = () => {
     const color = ["#fe9b72", "#fec971", "#00d1fe", "#b693fd", "#e4ee91"]
-    const [listOpen, setListOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
-        setListOpen(!listOpen)
+        setIsOpen(!isOpen);
     }
     return (
-        <SideBarWrapper>
-            <IMG src={plusIcon} alt="add" onClick={toggle}/>
-            <SBList>
-                {
-                    color.map((item, index) =>
+        <SideBarWrapper >
+                <IMG src={plusIcon} alt="add" isOpen={isOpen} onClick={()=> toggle() + console.log(isOpen)}/>
+            <SBList isOpen={isOpen}>
+                {color.map((item, index) =>
                         <SBLItem key={index} style={{backgroundColor: item}}
-                        />)
-                }
+                        />)}
             </SBList>
         </SideBarWrapper>
     )

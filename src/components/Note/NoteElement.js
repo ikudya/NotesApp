@@ -18,7 +18,22 @@ export const NoteText = styled.textarea`
   line-height: 1.875rem;
   outline: none;
   border: none;
-  
+  overflow-y: scroll;
+  ::-webkit-scrollbar{
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: lightgrey;
+    transition: 300ms;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: gray;
+  }
 `
 
 export const Text = styled.p`
