@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import React,{useState} from "react";
 import './App.css';
+import NoteContainer from "./components/NoteContainer/NoteContainer";
+import SideBar from "./components/SideBar/SideBar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => {
+        setIsOpen(!isOpen)
+    }
+    return (
+        <div className="App">
+            <SideBar isOpen={isOpen} toggle={toggle}/>
+            <NoteContainer/>
+        </div>
+    );
 }
 
 export default App;
