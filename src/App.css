@@ -4,3 +4,8 @@
   gap: 20px;
   padding: 40px;
 }
+@media screen and (max-width: 480px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+}

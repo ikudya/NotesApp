@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 export const NotesContainer = styled.div `
    height: 100%;
+  @media screen and (max-width: 480px) {
+    height: 90%;
 `;
 export const H2 = styled.h2 `
 margin-bottom: 20px;
@@ -28,5 +30,8 @@ export const NoteContainerNotes = styled.div`
   }
   ::-webkit-scrollbar-thumb:hover{
     background-color: gray;
+  }
+  @media screen and (max-width: 990px){
+    justify-content: center;
   }
 `;

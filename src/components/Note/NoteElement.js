@@ -9,6 +9,9 @@ export const NoteWrapper = styled.div `
   flex-direction: column;
   background-color: blueviolet;
   border-radius: 30px;
+  :hover IMG{
+    opacity: 1;
+  }
 `
 export const NoteText = styled.textarea`
   flex: 1;
@@ -40,3 +43,14 @@ export const Text = styled.p`
   
 `
 
+export const NtFooter = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+export const IMG = styled.img`
+  height: 25px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 500ms;
+`;

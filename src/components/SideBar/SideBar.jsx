@@ -10,7 +10,7 @@ const SideBar = (props) => {
     }
     return (
         <SideBarWrapper >
-                <IMG src={plusIcon} alt="add" isOpen={isOpen} onClick={()=> toggle() + console.log(isOpen)}/>
+                <IMG src={plusIcon} alt="add" isOpen={isOpen} onClick={()=> toggle()}/>
             <SBList isOpen={isOpen}>
                 {color.map((item, index) =>
                         <SBLItem key={index} style={{backgroundColor: item}}

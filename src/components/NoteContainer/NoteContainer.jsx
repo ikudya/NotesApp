@@ -18,10 +18,13 @@ const NoteContainer = (props) => {
             <NoteContainerNotes>
                 {
                     notes?.length>0?
-                        ( notes.map((item) =>
+                        ( notes.map((item) => (
                         <Note
                         key={item.id}
-                        note={item}/>)
+                        note={item}
+                        deleteNote={props.deleteNote}
+                        updateText={props.updateText}
+                        />))
                     ):(<h3>No Notes present</h3>)}
             </NoteContainerNotes>
         </NotesContainer>
