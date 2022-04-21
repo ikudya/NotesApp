@@ -2,71 +2,27 @@ import React from "react";
 import Note from "../Note/Note";
 import {H2, NoteContainerNotes, NotesContainer} from "./NoteContainerElement";
 
-const NoteContainer = () => {
-    return(
+const NoteContainer = (props) => {
+    const RA = (arr) => {
+        const array = []
+        for (let i = arr.length - 1; i >= 0; --i) {
+            array.push(arr[i])
+        }
+        return array;
+    };
+    const notes = RA(props.notes);
+
+    return (
         <NotesContainer>
             <H2>Notes</H2>
-            <NoteContainerNotes  >
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
-                <Note note={{
-                    text: "Hello World",
-                    time: "4:32PM",
-                    color: "red"
-                }}/>
+            <NoteContainerNotes>
+                {
+                    notes?.length>0?
+                        ( notes.map((item) =>
+                        <Note
+                        key={item.id}
+                        note={item}/>)
+                    ):(<h3>No Notes present</h3>)}
             </NoteContainerNotes>
         </NotesContainer>
     )
